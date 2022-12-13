@@ -1,6 +1,6 @@
 # Shamelessly copied from http://flask.pocoo.org/docs/quickstart/
 
-# this is test brunch changes
+# this is teZt brunch changes
 
 # import some_module
 # from some import module
