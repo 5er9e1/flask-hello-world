@@ -1,6 +1,6 @@
 # Shamelessly copied from http://flask.pocoo.org/docs/quickstart/
 
-# this is test brunch changes
+# this is teZt brunch changes
 
 # import some_module
 # from some import module
@@ -26,13 +26,24 @@ def hello_world():
     return 'Hello World!'
 
 @app.route('/badcode1')
-def hbad_code_one():
+def bad_code_one():
     return os.system('ls -l')
 
 @app.route('/badcode2')
-def hbad_code_two():
+def bad_code_two():
     cmd = request.args.get('cmd', 'echo "blah"')
     return os.system(cmd)
+
+@app.route('/badcode3')
+def bad_code_three():
+    cmd = request.args.get('cmd', 'echo "blah"')
+    return os.system(cmd)
+
+def duplicated_name():
+  pass
+
+def duplicated_name():
+  print('duplicated name')
 
 if __name__ == '__main__':
     app.run()
