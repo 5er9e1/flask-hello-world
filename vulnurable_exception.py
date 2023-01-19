@@ -1,17 +1,20 @@
+# Shamelessly copied from http://flask.pocoo.org/docs/quickstart/
+
+# this is teZt brunch changes
+
+# import some_module
+# from some import module
+
 import os
 # bad imports
 import sys
 from typing import List
-from typing import Tuple
 
 from flask import Flask, request
 app = Flask(__name__)
 
 non_used_list = []
 always_none = non_used_list.append("1")
-
-non_used_list = []
-always_none = [].append("2")
 
 try:
   1/0
@@ -23,11 +26,8 @@ def hello_world():
     return 'Hello World!'
 
 @app.route('/badcode1')
-def bad_code_one(param=None):
-    if param:
-        return os.system('ls -l ' + param)
-    else:
-        return os.system('ls -l')
+def bad_code_one():
+    return os.system('ls -l')
 
 @app.route('/badcode2')
 def bad_code_two():
@@ -47,3 +47,4 @@ def duplicated_name():
 
 if __name__ == '__main__':
     app.run()
+
